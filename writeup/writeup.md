@@ -383,7 +383,7 @@ already exists, print the contents of `DUPLICATE_ERROR` and return. If Set is al
 #### - `public int size()`<br/>
 A method that returns the size of the Set based on how many elements have been added.<br/>
 
-#### - `public String toSortedList()`<br/>
+#### - `public SortedList toSortedList()`<br/>
 This method should convert the Set to SortedList and return the SortedList object.
 
 ## Testing
