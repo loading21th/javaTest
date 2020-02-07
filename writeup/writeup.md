@@ -54,7 +54,7 @@ FifoList is a data structure that maintains its elements in First-In-First-Out o
 FIFO means that an element is earlier in the data structure's order if it was added before 
 other elements were added. This is described below:
 ```
-Creating FifoList with 2, then 7, and then 4:
+Creating FifoList of maxSize 5 and adding 2, then 7, and then 4:
 2, 7, 4
 
 Add 5 to the FifoList:
@@ -74,7 +74,7 @@ LIFO means that an element is earlier in the data structure's order if it was ad
 other elements were added. This is
 described below: 
 ```
-Creating LifoList with 2, then 7, and then 4:
+Creating LifoList of maxSize 5 and adding 2, then 7, and then 4:
 4, 7, 2
 
 Add 5 to the LifoList:
@@ -91,7 +91,7 @@ Delete operation (deletes the top element):
 
 SortedList is a data structure that maintains its elements in ascending sorted order. This is described below:
 ```
-Creating SortedList with 2, 7, 4:
+Creating SortedList of maxSize 5 and adding 2, then 7, and then 4:
 2, 4, 7
 
 Add 5 to the SortedList:
@@ -111,7 +111,7 @@ Delete operation (deletes the top element, which is the smallest element):
 A Set is a data structure that can store elements not in any particular order, 
 and no repeated values are stored. This is described below:
 ```
-Creating Set with 2, then 2, then 4:
+Creating Set of maxSize 5 and adding 2, then 2, and then 4:
 Since Set doesn't contain duplicate values, the Set just contains 2 and 4, not in 
 any particular order.
 2, 4 (or any permutation of that since order doesn't matter)
