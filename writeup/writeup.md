@@ -193,7 +193,8 @@ and the integer array to null. <br/>
 
 #### - `public FifoList(FifoList q)`<br/>
 The deep copy constructor for the `FifoList` class, which takes the FifoList object `q` as an input and 
-creates a deep copy of the FifoList. <br/>
+creates a deep copy of the FifoList. If the parameters passed are invalid (null object), then initialize your class
+ variables `maxSize` to 0 and the integer array to null. <br/>
 
 #### - `public void add(int element)`<br/>
 A method to add an int `element` to the FifoList. If FifoList is already full or FifoList is null, print the contents of 
@@ -253,7 +254,8 @@ and the int array to null. <br/>
 
 #### - `public LifoList(LifoList s)`<br/>
 The deep copy constructor for `LifoList` class which takes the LifoList object `s` as an input and 
-creates a deep copy of the LifoList. <br/>
+creates a deep copy of the LifoList. If the parameters passed are invalid (null object), then initialize your class
+variables `maxSize` to 0 and the integer array to null. <br/>
 
 #### - `public void add(int element)`<br/>
 A method to add an int `element` to the LifoList. If LifoList is already full or LifoList is null, print the contents 
@@ -312,7 +314,8 @@ and the int array to null. <br/>
 
 #### - `public SortedList(SortedList s)`<br/>
 The deep copy constructor for the `SortedList` class which takes the SortedList object `s` as an input and 
-creates a deep copy of the SortedList.<br/>
+creates a deep copy of the SortedList. If the parameters passed are invalid (null object), then initialize your class
+variables `maxSize` to 0 and the integer array to null.<br/>
 
 #### - `public void add(int element)`<br/>
 A method to add an int `element` to the SortedList. If SortedList is already full or SortedList is null, print the contents 
@@ -372,7 +375,8 @@ and the integer array to null. <br/>
 
 #### - `public Set(Set s)`<br/>
 The deep copy constructor for the `Set` class which takes the Set object `s` as an input and 
-creates a deep copy of the Set. <br/>
+creates a deep copy of the Set. If the parameters passed are invalid (null object), then initialize your class
+variables `maxSize` to 0 and the integer array to null. <br/>
 
 #### - `public void add(int element)`<br/>
 A method to add an integer `element` to the Set. Since duplicate elements are not allowed 
