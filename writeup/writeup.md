@@ -487,6 +487,7 @@ A full [style guideline](https://sites.google.com/eng.ucsd.edu/cse8b-winter2020/
 
 ## Submission
 Required Submission Files
+- `BasicMethods.java`
 - `DataStructure.java`
 - `OrderedDS.java`
 - `UnorderedDS.java`
