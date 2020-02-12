@@ -1,13 +1,13 @@
 public class FifoList extends OrderedDS{
   private int maxSize;
-  private int first;  //第一个插入的元素
-  private int last;   //最后一个插入元素之后的位置
+  private int first;  //第一个插入的元素,初始无元素为-1
+  private int last;   //最后一个插入元素之后的位置,即期望插入的位置初始为0
   private static final String EMPTY_ERROR = "FifoList is empty";
   private static final String MAX_SIZE_ERROR = "FifoList maximum limit reached";
 
   public FifoList(){
     maxSize = 0;
-    first = 0;
+    first = -1;
     last = 0;
     array = null;
   }
@@ -16,12 +16,12 @@ public class FifoList extends OrderedDS{
     if(maxSize < 0){
       this.maxSize = 0;
       this.array = null;
-      first = 0;
+      first = -1;
       last = 0;
-      return 0;
+      return ;
     }
     this.maxSize = maxSize;
-    first = 0;
+    first = -1;
     last = 0;
     this.array = new int[maxSize];
 
@@ -31,15 +31,15 @@ public class FifoList extends OrderedDS{
     if(q==null){
       this.maxSize = 0;
       this.array = null;
-      first = 0;
+      first = -1;
       last = 0;
-      return 0;
+      return;
     }
     this.maxSize = q.maxSize;
 
     if(q.array == null){
       this.array = null;
-      return 0;
+      return;
     }
 
     first = q.first;
@@ -56,17 +56,17 @@ public class FifoList extends OrderedDS{
   }
 
   public void add(int element){
-    if(this.array == null){
+    if(this.array == null || first == last){
       System.out.println(MAX_SIZE_ERROR);
       return;
     }
     int tmp = last + 1;
-    if (tmp > maxSize) tmp = 0;
-    if (tmp == first) {
-      System.out.println(MAX_SIZE_ERROR);
-      return;
+    if (tmp >= maxSize) tmp = 0;
+    this.array[last] = element;
+    if(-1 == first)
+    {
+        first = last;
     }
-    this.array[tmp] = element;
     last = tmp;
   }
 
@@ -75,13 +75,22 @@ public class FifoList extends OrderedDS{
  *@override
 */
   public int delete(){
-    if(this.array == null || first == last){
+    if(this.array == null || -1 == first ){
       System.out.println(EMPTY_ERROR);
       return -1;
     }
+    int top = array[first];
     int tmp = first + 1;
-    if (tmp > maxSize) tmp = 0;
-    first = tmp;
+    if (tmp >= maxSize) 
+    {
+        tmp = 0;
+    }
+    if (tmp == last) 
+    {
+        first = -1;
+    }else{
+        first = tmp;
+    }
     return top;
   }
 
@@ -97,7 +106,9 @@ public class FifoList extends OrderedDS{
   }
 
   public int size(){
-    if (first<=last);
+    if (-1 == first)
+        return 0;
+    else if (first<=last)
         return last-first;
     else
         return (maxSize-first)+last;
@@ -107,17 +118,23 @@ public class FifoList extends OrderedDS{
 
   public String toString(){
     String empty = "";
-    if(this.array == null && first == last){
+    if(this.array == null && -1 == first){
       return empty;
     }
-    String a = "-";
-    for(int i = first; i < last; i++){
+    for(int i = first; ; i++){
       if(i >= maxSize){
           i = 0;
       }
-      a += this.array[i];
+      if (i == last)
+      {
+          break;
+      }
+      empty += this.array[i];
+      empty += "-";
     }
-    return a;
+
+    empty = empty.substring(0, empty.length() - 1);
+    return empty;
   }
 
 }

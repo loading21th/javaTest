@@ -1,4 +1,4 @@
-public class DataStructureTester {
+public class LytestFifo {
 
     private static FifoList testFifoList(FifoList fifoList) {
         System.out.println("Adding 7..");
@@ -27,7 +27,7 @@ public class DataStructureTester {
     }
 
     public static void main(String[] args) {
-        FifoList fifoList = new fifoList(5);
+        FifoList fifoList = new FifoList(5);
         System.out.println("Testing fifoList");
         fifoList = testFifoList(fifoList);
         System.out.println("*********************************************************************");
